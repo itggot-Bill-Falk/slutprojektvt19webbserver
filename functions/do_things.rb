@@ -17,7 +17,7 @@ def login()
     end
 
 def register(params)
-    db = SQLite3::Database.new("db/forum.db")
+    db = SQLite3::Database.new("db/Forum.db")
     db.results_as_hash = true
     
     finish = db.execute("SELECT id FROM users WHERE username=?",  [params["Username"]])
@@ -37,7 +37,7 @@ end
 
 def comments (params,userId)
         text = params["content"]
-        db = SQLite3::Database.new 'db/forum.db'
+        db = SQLite3::Database.new 'db/Forum.db'
         username = db.execute("SELECT username FROM Users WHERE id=?", [session["user"]])
      
     
