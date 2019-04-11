@@ -1,4 +1,4 @@
-def login()
+def login(params)
         db = SQLite3::Database.new("db/forum.db")
         db.results_as_hash = true
         
@@ -28,9 +28,9 @@ def register(params)
     
     new_password = BCrypt::Password.create(params["Password"])
     
-    db.execute("INSERT INTO users (username, password, email) VALUES (?, ?, ?)", [params["Username"], new_password, params["email"]])
+    db.execute("INSERT INTO users (username, password) VALUES (?, ?)", [params["Username"], new_password])
     
-    new_user_id = db.execute("SELECT id FROM Users WHERE username=?", [params["Username"]])
+    new_user_id = db.execute("SELECT id FROM users WHERE username=?", [params["Username"]])
     
     return new_user_id[0]["id"]
 end
@@ -48,3 +48,4 @@ def comments (params,userId)
         new_file = FileUtils.copy(path, "./public/img/#{new_file_name}") 
     
         db.execute("INSERT INTO posts (title, text, tag, author, authorId) VALUES(?,?,?,?,?)",[params['content'],session['user'],username,new_file_name])
+end

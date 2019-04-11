@@ -5,13 +5,13 @@ require 'sqlite3'
 
 enable :sessions
 
-require_relative 'models/do_things.rb'
-require_relative 'models/get_things.rb'
+require_relative 'functions/do_things'
+require_relative 'functions/get_things'
 
 get('/') do
     posts = get_all_posts()
 
-    slim(:index, locals:{posts: posts})
+    slim(:index, locals:{posts: posts, session: session})
 end
 
 get('/login') do
@@ -65,4 +65,9 @@ post('/comment/:post_id') do
     comment(params, session['user_id'])
 
     redirect(back)
+end
+
+post('/logout') do
+    session.destroy
+    redirect('/')
 end

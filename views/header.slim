@@ -1,22 +1,22 @@
 header
     .title 
         a href="/"
-            p r5apex Blog
+            p Super cool forum
     .profile-box
-        - if session.key?("user")
+        - if session.key?("user_id")
             .login
-                a href="/Profile/#{session['user']}"
+                a href="/user/#{session['user_id']}"
                     input type="button" value="Profile"
             .sign-up
-                a href="/Profile/#{session['user']}/alter"
+                a href="/user/#{session['user_id']}/alter"
                     input type="button" value="Alter"
             .logout
-                form action="/logout" method="post" 
-                    button type="sumit" Logout
+                form action="/logout" method="post"
+                    input type="submit" value="Logout"
         - else
             .login 
-                a href="/Sign_In"
-                    input type="button" value="Sign In"
+                a href="/login"
+                    input type="button" value="Login"
             .sign-up
-                a href="/Register"
+                a href="/register"
                     input type="button" value="Register"
