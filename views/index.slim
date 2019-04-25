@@ -1,24 +1,23 @@
 main
-main
     .wrapper
         - if defined? posts
             / Lägger flera articles i wrappern 
             - posts.each do |post|
                 article
-                    - if post["pic"] != nil
+                    - if post["picture"] != nil
                         .pic
                             / länkar en bild med /img/ som prefix då den alltid är samma. altt ersätter bilden med text om den inte skulle visas
-                            img src="/img/#{post["pic"]}" alt="pic"
+                            img src="/img/#{post["picture"]}" alt="pic"
                     .content
                         p = post["content"]
                     .author
                         p = post["author"]
                         - if session["user_id"] == post["userId"]
-                            form action="/delete" method="POST"
+                            form action="/delete/#{post['id']}" method="POST"
                                 input value="Delete Post" type="submit"
-                                input type="hidden" name="post_id" value="#{post["id"]}" 
                 br/
 footer
     p Dis is foot
+
         
             

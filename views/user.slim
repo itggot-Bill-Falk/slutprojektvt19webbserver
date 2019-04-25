@@ -2,19 +2,28 @@ main
     form action="/post" method="POST" id="bubble" enctype="multipart/form-data"
         label for="content" Message:
         textarea name="content" cols="30" rows="10" id="content"
-        input type="text" name="pic"
+        br
+        br
         label for="image" Image (optional):
         input type="file" name="image" accept="image/*" id="image"
+        br
+        br
+        label for="tag" Tag
+        input type="text" name="tag"
+
         button type="submit" Send
     - if defined? posts
         / Lägger flera articles i wrappern 
         - posts.each do |post|
             article
-                - if post["pic"] != nil
+                - if post["picture"] != nil
                     .pic
-                        img src="/img/#{post["pic"]}" alt="pic"
+                        img src="/img/#{post["picture"]}" alt="pic"
                 .content
                     p = post["content"]
                 .author
                     p = post["author"]
+                    - if session["user_id"] == post["userId"]
+                        form action="/delete/#{post['id']}" method="POST"
+                            input value="Delete Post" type="submit"
             br 

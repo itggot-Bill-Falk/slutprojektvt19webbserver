@@ -71,3 +71,25 @@ post('/logout') do
     session.destroy
     redirect('/')
 end
+
+get('/tags') do
+    result = get_all_tags()
+
+    slim(:tags_list, locals:{tags: result})
+end
+
+get('/tags/:id') do
+    result = get_posts_by_tag(params['id'])
+
+    slim(:tags, locals:{posts: result})
+end
+
+post('/post') do
+    make_post(params, session)
+    redirect(back)
+end
+
+post('/delete/:id') do
+    delete_post_by_id(params['id'].to_i)
+    redirect(back)
+end

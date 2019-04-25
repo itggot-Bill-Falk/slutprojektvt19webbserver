@@ -25,6 +25,15 @@ def get_all_posts()
     return posts
 end
 
+def get_all_tags()
+    db = SQLite3::Database.open('db/Forum.db')
+    db.results_as_hash = true
+
+    tags = db.execute('SELECT * FROM tags')
+    
+    return tags
+end
+
 def get_post_by_id(id)
     db = SQLite3::Database.open('db/Forum.db')
     db.results_as_hash = true
@@ -47,7 +56,7 @@ def get_posts_by_tag(tag)
     db = SQLite3::Database.open('db/Forum.db')
     db.results_as_hash = true
 
-    posts = db.execute('SELECT * FROM posts WHERE tag=?', [tag])
+    posts = db.execute('SELECT * FROM posts WHERE tagId=?', [tag])
     
     return posts
 end
@@ -60,3 +69,4 @@ def get_comments_by_post(post_id)
     p comments
     return comments
 end
+
