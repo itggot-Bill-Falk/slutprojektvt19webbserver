@@ -56,7 +56,7 @@ def make_post(params, session)
     # VARIABLES
     text = params["content"]
     username = db.execute("SELECT username FROM Users WHERE id=?", [session["user_id"]])[0]['username']
-    tag_id = db.execute("SELECT id FROM tags WHERE name=?", params['tag'])[0]['id']
+    tags = params["tags"].split(",").map{ |tag| db.execute("SELECT id FROM tags WHERE name=?", tag.strip() ) }
 
     # FILES
     new_file_name = SecureRandom.uuid
@@ -64,7 +64,12 @@ def make_post(params, session)
     path = File.path(temp_file)
     new_file = FileUtils.copy(path, "./public/img/#{new_file_name}") 
 
-    db.execute("INSERT INTO Posts (content, picture, userId, tagId, author) VALUES(?,?,?,?,?)",[params['content'], new_file_name, session['user_id'], tag_id ,username])
+    db.execute("INSERT INTO Posts (content, picture, userId,author) VALUES(?,?,?,?)",[params['content'], new_file_name, session['user_id'],username])
+    post_id = db.execute("SELECT last_insert_rowid()") 
+   
+    tags.each do |tag_id|
+        db.execute("INSERT INTO posts_tags (post_id, tag_id) VALUES (?,?)", [post_id[0][0], tag_id[0]["id"]])
+     end
 end
 
 def delete_post_by_id(id)

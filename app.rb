@@ -2,6 +2,7 @@ require 'sinatra'
 require 'slim'
 require 'bcrypt'
 require 'sqlite3'
+require 'JSON'
 
 enable :sessions
 
@@ -80,7 +81,7 @@ end
 
 get('/tags/:id') do
     result = get_posts_by_tag(params['id'])
-
+    puts JSON.pretty_generate({posts: result})
     slim(:tags, locals:{posts: result})
 end
 

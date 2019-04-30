@@ -55,9 +55,9 @@ end
 def get_posts_by_tag(tag)
     db = SQLite3::Database.open('db/Forum.db')
     db.results_as_hash = true
-
-    posts = db.execute('SELECT * FROM posts WHERE tagId=?', [tag])
     
+    posts = db.execute('SELECT * FROM posts_tags WHERE tag_id=?', [tag]).map{ |post| db.execute("SELECT * FROM posts WHERE id=?",[post["post_id"]]) }.compact()
+    posts = posts.delete_if { |post| post.flatten.empty? }
     return posts
 end
 
