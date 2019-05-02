@@ -15,6 +15,9 @@ main
                         - if session["user_id"] == post["userId"]
                             form action="/delete/#{post['id']}" method="POST"
                                 input value="Delete Post" type="submit"
+                            form action="/edit_post/#{post['id']}" method="POST"
+                                input value="Edit Post" type="submit"    
+
                 br/
 footer
     p Dis is foot

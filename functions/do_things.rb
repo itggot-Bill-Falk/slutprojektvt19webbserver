@@ -49,6 +49,7 @@ def comments (params,userId)
         db.execute("INSERT INTO posts (title, text, tag, author, authorId) VALUES(?,?,?,?,?)",[params['content'],session['user'],username,new_file_name])
 end
 
+
 def make_post(params, session)
     db = SQLite3::Database.new 'db/forum.db'
     db.results_as_hash = true
