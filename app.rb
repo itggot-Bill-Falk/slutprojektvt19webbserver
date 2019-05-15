@@ -6,11 +6,25 @@ require 'JSON'
 
 enable :sessions
 
-require_relative 'functions/DoThings'
-require_relative 'functions/GetThings'
+require_relative 'model/DoThings'
+require_relative 'model/GetThings'
+
+include DoThings
+include GetThings
+
+before() do
+    if session['user_id'] 
+        @username = get_username_by_user(session['user_id']) [0]['username']
+    else
+        @username = ""
+    end
+end
+
+
 
 # Display landing page
 #
+# @see GetThings#get_all_posts
 get('/') do
     posts = get_all_posts()
 
@@ -26,10 +40,10 @@ end
 
 # Checks if account exists and logs into account
 #
-# @params [string] Username, The username
-# @param [string] Password, The password
+# @param [String] Username, The username
+# @param [String] Password, The password
 #
-# @See DoThings#Login
+# @see DoThings#login
 post('/login') do
     user = login(params)
     if user
@@ -48,10 +62,10 @@ end
 
 # Attemps to register user and logs in if successfull
 #
-# @params [string] Username, The username
-# @params [string] Password, The password
+# @param [String] Username, The username
+# @param [String] Password, The password
 #
-# @See DoThings#Register
+# @see DoThings#register
 post('/register') do
     user = register(params)
     if user
@@ -64,9 +78,9 @@ end
 
 # Get all posts based on the user_id
 #
-# @params [integer] id, User uniqe id
+# @param [Integer] id, User uniqe id
 #
-# @See GetThings#GetPostByUser
+# @see GetThings#get_posts_by_user
 get('/user/:id') do
     posts = get_posts_by_user(params['id'])
 
@@ -75,9 +89,9 @@ end
 
 # Displays all topics with specified tag
 #
-# @param [string] tags, Specified tag name
+# @param [String] tags, Specified tag name
 #
-# @See DoThings#GetPostsByTag
+# @see DoThings#get_posts_by_tag
 get('/forum/:tag') do
     posts = get_posts_by_tag(params['tag'])
     
@@ -86,9 +100,10 @@ end
 
 # Gets everything from posts based on id 
 #
-#  @params [integer] id, User uniqe id
+# @param [Integer] id, User uniqe id
 #
-# @See GetThings#GetPostById
+# @see GetThings#get_post_by_id
+# @see GetThings#get_comments_by_post
 get('/post/:id') do
     post = get_post_by_id(params['id'])
     comments = get_comments_by_post(params['id'])
@@ -98,13 +113,14 @@ end
 
 # Allows user to comment if they are logged in 
 #
-# @params [string] content, User message
-# @param [string] image, User picture
+# @param [String] content, User message
+# @param [String] image, User picture
 #
-# @See DoThings#Comment
+# @see DoThings#comment
 post('/comment/:post_id') do
-    comment(params, session['user_id'])
-
+    if session['user_id']
+        comment(params, session['user_id'])
+    end
     redirect(back)
 end
 
@@ -117,17 +133,18 @@ end
 
 # Gets all tags from database
 #
+# @see GetThings#get_all_tags
 get('/tags') do
     result = get_all_tags()
 
     slim(:tags_list, locals:{tags: result})
 end
 
-# Gets everything from post_tags bad on tag_id
+# Gets everything from post_tags based on tag_id
 #
-# @params [integer] id, User unique id
+# @param [Integer] id, User unique id
 #
-# @See GetThings#GetPostByTag
+# @see GetThings#get_posts_by_tag
 get('/tags/:id') do
     result = get_posts_by_tag(params['id'])
     puts JSON.pretty_generate({posts: result})
@@ -136,19 +153,24 @@ end
 
 # Add new posts if user is logged in and redirects to profile page
 #
-# @params [string] content, User message
-# @params [string] image, User picture
-# @params [string] tags, specified post categories
+# @param [String] content, User message
+# @param [String] image, User picture
+# @param [String] tags, specified post categories
 #
-# @See DoThings#MakePost
+# @see DoThings#make_post
 post('/post') do
-     make_post(params, session)
+    if session['user_id']
+        make_post(params, session)
+    end
     redirect(back)
 end
 
+# Delets the post with specified id
 #
-#
+# @param [Integer]
 post('/delete/:id') do
-    delete_post_by_id(params['id'].to_i)
+    if session['user_id'] == get_users_by_post_id(params['id'])[0]['userId']
+        delete_post_by_id(params['id'].to_i)
+    end
     redirect(back)
 end

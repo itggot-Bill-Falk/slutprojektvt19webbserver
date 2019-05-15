@@ -1,0 +1,6 @@
+${COMMENT} $[Description]
+${COMMENT} $|
+${COMMENT} @param [$[Integer]] :${PARAMS}, $[Description]
+${COMMENT} |$
+${COMMENT} @return [$[Type]] 
+${COMMENT}  *  :$[var] [$[type]] $[Description]

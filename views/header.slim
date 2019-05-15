@@ -7,6 +7,7 @@ header
             p Super cool forum
     .profile-box
         - if session.key?("user_id")
+            p ="Logged in as #{@username}"
             .login
                 a href="/user/#{session['user_id']}"
                     input type="button" value="Profile"
