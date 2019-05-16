@@ -35,7 +35,16 @@ module GetThings
         
         return tags
     end
-
+    # Aquires post based on id
+    #
+    # @param [Integer] id, user unique id
+    #
+    # @return [Hash]
+    #   * :id [integer], post specific id
+    #   * :content[String], user generated text
+    #   * :picture[String], user generated image
+    #   * :userid [Integer], user unique id
+    #   * :author [String], creator of the post
     def get_post_by_id(id)
         db = SQLite3::Database.open('db/Forum.db')
         db.results_as_hash = true
@@ -45,11 +54,14 @@ module GetThings
         return post
     end
 
+    # Aquires post based on user 
+    #
+    # @param [Integer] user_id, user unique id
     def get_posts_by_user(user_id)
         db = SQLite3::Database.open('db/Forum.db')
         db.results_as_hash = true
 
-        posts = db.execute('SELECT * FROM posts WHERE userId=?', [user_id])
+        posts = db.execute('SELECT * FROM posts WHERE userid=?', [user_id])
         
         return posts
     end
@@ -63,29 +75,19 @@ module GetThings
         return posts
     end
 
-    # def get_comments_by_post(post_id)
-
-    #     db = SQLite3::Database.open('db/Forum.db')
-    #     db.results_as_hash = true
-
-    #     comments = db.execute('SELECT comments.text, users.username FROM comments INNER JOIN users ON comments.userId=users.id WHERE comments.postId=?', [post_id])
-    #     p comments
-    #     return comments
-    # end
-
     def get_users_by_post_id(post_id)
         db = SQLite3::Database.open('db/Forum.db')
         db.results_as_hash = true
         
-        posts = db.execute('SELECT userId FROM posts WHERE id=?', [post_id]) 
+        posts = db.execute('SELECT userid FROM posts WHERE id=?', [post_id]) 
         return posts
     end
 
-    def get_username_by_user(userId)
+    def get_username_by_user(userid)
         db = SQLite3::Database.open('db/Forum.db')
         db.results_as_hash = true
         
-        posts = db.execute('SELECT username FROM users WHERE id=?', [userId]) 
+        posts = db.execute('SELECT username FROM users WHERE id=?', [userid]) 
         return posts
     end   
  

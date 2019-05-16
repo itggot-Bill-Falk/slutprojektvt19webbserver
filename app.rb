@@ -167,7 +167,10 @@ end
 
 # Delets the post with specified id
 #
-# @param [Integer]
+# @param [Integer] id, User unique id
+#
+# @see GetThings#get_users_by_post_id
+# @see DoThings#delete_post_by_id
 post('/delete/:id') do
     if session['user_id'] == get_users_by_post_id(params['id'])[0]['userId']
         delete_post_by_id(params['id'].to_i)

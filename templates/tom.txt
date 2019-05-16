@@ -1,5 +1,0 @@
-${COMMENT} $[Description]
-${COMMENT} $|
-${COMMENT} @param [$[Integer]] :${PARAMS}, $[Description].
-${COMMENT} |$
-${COMMENT} @see Model#$[Function]
