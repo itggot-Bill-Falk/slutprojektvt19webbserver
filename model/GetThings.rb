@@ -80,11 +80,11 @@ module GetThings
     # @param [String] tag, tool used to categorize posts tagName
     #
     # @return [Array]
-    #   * :id [integer], post specific id
-    #   * :content[String], user generated text
-    #   * :picture[String], user generated image
-    #   * :userid [Integer], user unique id
-    #   * :author [String], creator of the post
+    #   id [integer], post specific id
+    #   content[String], user generated text
+    #   picture[String], user generated image
+    #   userid [Integer], user unique id
+    #   author [String], creator of the post
     def get_posts_by_tag(tag)
         db = SQLite3::Database.open('db/Forum.db')
         db.results_as_hash = true
@@ -98,7 +98,7 @@ module GetThings
     # @param [Integer] post_id, id given to post when posted
     #
     # @return [Array]
-    #   * :userid [Integer], user unique id
+    #   userid [Integer], user unique id
     def get_users_by_post_id(post_id)
         db = SQLite3::Database.open('db/Forum.db')
         db.results_as_hash = true
@@ -111,7 +111,7 @@ module GetThings
     # @param [Integer] userId, user unique id
     #
     # @return [Array]
-    #   * :author [String], creator of the post
+    #   author [String], creator of the post
     def get_username_by_user(userid)
         db = SQLite3::Database.open('db/Forum.db')
         db.results_as_hash = true
