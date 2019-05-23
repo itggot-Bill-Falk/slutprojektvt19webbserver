@@ -24,7 +24,7 @@ end
 
 # Display landing page
 #
-# @see GetThings#get_all_posts
+# @see Model#get_all_posts
 get('/') do
     posts = get_all_posts()
 
@@ -43,7 +43,7 @@ end
 # @param [String] Username, The username
 # @param [String] Password, The password
 #
-# @see DoThings#login
+# @see Model#login
 post('/login') do
     user = login(params)
     if user
@@ -65,7 +65,7 @@ end
 # @param [String] Username, The username
 # @param [String] Password, The password
 #
-# @see DoThings#register
+# @see Model#register
 post('/register') do
     user = register(params)
     if user
@@ -80,7 +80,7 @@ end
 #
 # @param [Integer] id, User uniqe id
 #
-# @see GetThings#get_posts_by_user
+# @see Model#get_posts_by_user
 get('/user/:id') do
     posts = get_posts_by_user(params['id'])
 
@@ -91,7 +91,7 @@ end
 #
 # @param [String] tags, Specified tag name
 #
-# @see DoThings#get_posts_by_tag
+# @see Model#get_posts_by_tag
 get('/forum/:tag') do
     posts = get_posts_by_tag(params['tag'])
     
@@ -102,8 +102,8 @@ end
 #
 # @param [Integer] id, User uniqe id
 #
-# @see GetThings#get_post_by_id
-# @see GetThings#get_comments_by_post
+# @see Model#get_post_by_id
+# @see Model#get_comments_by_post
 get('/post/:id') do
     post = get_post_by_id(params['id'])
     comments = get_comments_by_post(params['id'])
@@ -116,7 +116,7 @@ end
 # @param [String] content, User message
 # @param [String] image, User picture
 #
-# @see DoThings#comment
+# @see Model#comment
 post('/comment/:post_id') do
     if session['user_id']
         comment(params, session['user_id'])
@@ -133,7 +133,7 @@ end
 
 # Gets all tags from database
 #
-# @see GetThings#get_all_tags
+# @see Model#get_all_tags
 get('/tags') do
     result = get_all_tags()
 
@@ -144,7 +144,7 @@ end
 #
 # @param [Integer] id, User unique id
 #
-# @see GetThings#get_posts_by_tag
+# @see Model#get_posts_by_tag
 get('/tags/:id') do
     result = get_posts_by_tag(params['id'])
     puts JSON.pretty_generate({posts: result})
@@ -157,7 +157,7 @@ end
 # @param [String] image, User picture
 # @param [String] tags, specified post categories
 #
-# @see DoThings#make_post
+# @see Model#make_post
 post('/post') do
     if session['user_id']
         make_post(params, session)
@@ -169,8 +169,8 @@ end
 #
 # @param [Integer] id, User unique id
 #
-# @see GetThings#get_users_by_post_id
-# @see DoThings#delete_post_by_id
+# @see Model#get_users_by_post_id
+# @see Model#delete_post_by_id
 post('/delete/:id') do
     if session['user_id'] == get_users_by_post_id(params['id'])[0]['userId']
         delete_post_by_id(params['id'].to_i)

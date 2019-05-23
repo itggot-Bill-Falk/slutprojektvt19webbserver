@@ -55,20 +55,20 @@ module DoThings
     # @param [Hash] params, hash including details for comments 
     # @option params [Image] image, picture generated from users computer
     # @option params [String] content, what user types in textfield
-    def comments (params,userId)
-            text = params["content"]
-            db = SQLite3::Database.new 'db/Forum.db'
-            username = db.execute("SELECT username FROM Users WHERE id=?", [session["user"]])
+    # def comments (params,userId)
+    #         text = params["content"]
+    #         db = SQLite3::Database.new 'db/Forum.db'
+    #         username = db.execute("SELECT username FROM Users WHERE id=?", [session["user"]])
         
         
-            new_file_name = SecureRandom.uuid
-            temp_file = params["image"]["tempfile"]
-            path = File.path(temp_file)
+    #         new_file_name = SecureRandom.uuid
+    #         temp_file = params["image"]["tempfile"]
+    #         path = File.path(temp_file)
         
-            new_file = FileUtils.copy(path, "./public/img/#{new_file_name}") 
+    #         new_file = FileUtils.copy(path, "./public/img/#{new_file_name}") 
         
-            db.execute("INSERT INTO posts (title, text, tag, author, authorId) VALUES(?,?,?,?,?)",[params['content'],session['user'],username,new_file_name])
-    end
+    #         db.execute("INSERT INTO posts (title, text, tag, author, authorId) VALUES(?,?,?,?,?)",[params['content'],session['user'],username,new_file_name])
+    # end
 
     # Allows user to create post with tags 
     #

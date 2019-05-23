@@ -117,7 +117,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Aquires all posts and then returns them.</p>
+</div></span>
   
 </li>
 
@@ -139,7 +141,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Aquires all tags then returns them.</p>
+</div></span>
   
 </li>
 
@@ -169,7 +173,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_post_by_id-instance_method" title="#get_post_by_id (instance method)">#<strong>get_post_by_id</strong>(id)  &#x21d2; Object </a>
+      <a href="#get_post_by_id-instance_method" title="#get_post_by_id (instance method)">#<strong>get_post_by_id</strong>(id)  &#x21d2; Hash </a>
     
 
     
@@ -183,7 +187,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Aquires post based on id.</p>
+</div></span>
   
 </li>
 
@@ -191,7 +197,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_posts_by_tag-instance_method" title="#get_posts_by_tag (instance method)">#<strong>get_posts_by_tag</strong>(tag)  &#x21d2; Object </a>
+      <a href="#get_posts_by_tag-instance_method" title="#get_posts_by_tag (instance method)">#<strong>get_posts_by_tag</strong>(tag)  &#x21d2; Array </a>
     
 
     
@@ -205,7 +211,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Aquires post based on tag.</p>
+</div></span>
   
 </li>
 
@@ -213,7 +221,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_posts_by_user-instance_method" title="#get_posts_by_user (instance method)">#<strong>get_posts_by_user</strong>(user_id)  &#x21d2; Object </a>
+      <a href="#get_posts_by_user-instance_method" title="#get_posts_by_user (instance method)">#<strong>get_posts_by_user</strong>(user_id)  &#x21d2; Array </a>
     
 
     
@@ -227,7 +235,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Aquires post based on user.</p>
+</div></span>
   
 </li>
 
@@ -257,7 +267,32 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_users_by_post_id-instance_method" title="#get_users_by_post_id (instance method)">#<strong>get_users_by_post_id</strong>(post_id)  &#x21d2; Object </a>
+      <a href="#get_username_by_user-instance_method" title="#get_username_by_user (instance method)">#<strong>get_username_by_user</strong>(userid)  &#x21d2; Array </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><ul><li>
+<p>:author [String], creator of the post.</p>
+</li></ul>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_users_by_post_id-instance_method" title="#get_users_by_post_id (instance method)">#<strong>get_users_by_post_id</strong>(post_id)  &#x21d2; Array </a>
     
 
     
@@ -272,9 +307,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>comments = db.execute(&#39;SELECT comments.text, users.username FROM
-comments INNER JOIN users ON comments.userId=users.id WHERE
-comments.postId=?&#39;, [post_id])     p comments     return comments end.</p>
+<p>Aquires user based on their user_id.</p>
 </div></span>
   
 </li>
@@ -298,23 +331,36 @@ comments.postId=?&#39;, [post_id])     p comments     return comments end.</p>
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Aquires all posts and then returns them</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-21
-22
 23
 24
 25
 26
 27
-28</pre>
+28
+29
+30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'model/GetThings.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'model/GetThings.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_all_posts'>get_all_posts</span><span class='lparen'>(</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='const'>SQLite3</span><span class='op'>::</span><span class='const'>Database</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>db/Forum.db</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -338,23 +384,36 @@ comments.postId=?&#39;, [post_id])     p comments     return comments end.</p>
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Aquires all tags then returns them</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-30
-31
-32
 33
 34
 35
 36
-37</pre>
+37
+38
+39
+40</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'model/GetThings.rb', line 30</span>
+      <pre class="code"><span class="info file"># File 'model/GetThings.rb', line 33</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_all_tags'>get_all_tags</span><span class='lparen'>(</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='const'>SQLite3</span><span class='op'>::</span><span class='const'>Database</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>db/Forum.db</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -412,29 +471,89 @@ comments.postId=?&#39;, [post_id])     p comments     return comments end.</p>
       <div class="method_details ">
   <h3 class="signature " id="get_post_by_id-instance_method">
   
-    #<strong>get_post_by_id</strong>(id)  &#x21d2; <tt>Object</tt> 
+    #<strong>get_post_by_id</strong>(id)  &#x21d2; <tt>Hash</tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Aquires post based on id</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>id,</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>user unique id</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>:id [integer], post specific id</p>
+</li><li>
+<p>:<a href="String">content</a>, user generated text</p>
+</li><li>
+<p>:<a href="String">picture</a>, user generated image</p>
+</li><li>
+<p>:userid [Integer], user unique id</p>
+</li><li>
+<p>:author [String], creator of the post</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-39
-40
-41
-42
-43
-44
-45
-46</pre>
+51
+52
+53
+54
+55
+56
+57
+58</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'model/GetThings.rb', line 39</span>
+      <pre class="code"><span class="info file"># File 'model/GetThings.rb', line 51</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_post_by_id'>get_post_by_id</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='const'>SQLite3</span><span class='op'>::</span><span class='const'>Database</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>db/Forum.db</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -452,29 +571,89 @@ comments.postId=?&#39;, [post_id])     p comments     return comments end.</p>
       <div class="method_details ">
   <h3 class="signature " id="get_posts_by_tag-instance_method">
   
-    #<strong>get_posts_by_tag</strong>(tag)  &#x21d2; <tt>Object</tt> 
+    #<strong>get_posts_by_tag</strong>(tag)  &#x21d2; <tt>Array</tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Aquires post based on tag</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>tag,</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>tool used to categorize posts tagName</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>:id [integer], post specific id</p>
+</li><li>
+<p>:<a href="String">content</a>, user generated text</p>
+</li><li>
+<p>:<a href="String">picture</a>, user generated image</p>
+</li><li>
+<p>:userid [Integer], user unique id</p>
+</li><li>
+<p>:author [String], creator of the post</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-57
-58
-59
-60
-61
-62
-63
-64</pre>
+88
+89
+90
+91
+92
+93
+94
+95</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'model/GetThings.rb', line 57</span>
+      <pre class="code"><span class="info file"># File 'model/GetThings.rb', line 88</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_posts_by_tag'>get_posts_by_tag</span><span class='lparen'>(</span><span class='id identifier rubyid_tag'>tag</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='const'>SQLite3</span><span class='op'>::</span><span class='const'>Database</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>db/Forum.db</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -492,35 +671,95 @@ comments.postId=?&#39;, [post_id])     p comments     return comments end.</p>
       <div class="method_details ">
   <h3 class="signature " id="get_posts_by_user-instance_method">
   
-    #<strong>get_posts_by_user</strong>(user_id)  &#x21d2; <tt>Object</tt> 
+    #<strong>get_posts_by_user</strong>(user_id)  &#x21d2; <tt>Array</tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Aquires post based on user</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>user_id,</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>user unique id</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>:id [integer], post specific id</p>
+</li><li>
+<p>:<a href="String">content</a>, user generated text</p>
+</li><li>
+<p>:<a href="String">picture</a>, user generated image</p>
+</li><li>
+<p>:userid [Integer], user unique id</p>
+</li><li>
+<p>:author [String], creator of the post</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-48
-49
-50
-51
-52
-53
-54
-55</pre>
+70
+71
+72
+73
+74
+75
+76
+77</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'model/GetThings.rb', line 48</span>
+      <pre class="code"><span class="info file"># File 'model/GetThings.rb', line 70</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_posts_by_user'>get_posts_by_user</span><span class='lparen'>(</span><span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='const'>SQLite3</span><span class='op'>::</span><span class='const'>Database</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>db/Forum.db</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
     <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_results_as_hash'>results_as_hash</span> <span class='op'>=</span> <span class='kw'>true</span>
 
-    <span class='id identifier rubyid_posts'>posts</span> <span class='op'>=</span> <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SELECT * FROM posts WHERE userId=?</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='id identifier rubyid_user_id'>user_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_posts'>posts</span> <span class='op'>=</span> <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SELECT * FROM posts WHERE userid=?</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='id identifier rubyid_user_id'>user_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
     
     <span class='kw'>return</span> <span class='id identifier rubyid_posts'>posts</span>
 <span class='kw'>end</span></pre>
@@ -570,9 +809,9 @@ comments.postId=?&#39;, [post_id])     p comments     return comments end.</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="get_users_by_post_id-instance_method">
+  <h3 class="signature " id="get_username_by_user-instance_method">
   
-    #<strong>get_users_by_post_id</strong>(post_id)  &#x21d2; <tt>Object</tt> 
+    #<strong>get_username_by_user</strong>(userid)  &#x21d2; <tt>Array</tt> 
   
 
   
@@ -581,21 +820,52 @@ comments.postId=?&#39;, [post_id])     p comments     return comments end.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>comments = db.execute(&#39;SELECT comments.text, users.username FROM
-comments INNER JOIN users ON comments.userId=users.id WHERE
-comments.postId=?&#39;, [post_id])</p>
-
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_p'>p</span> <span class='id identifier rubyid_comments'><span class='object_link'><a href="DoThings.html#comments-instance_method" title="DoThings#comments (method)">comments</a></span></span>
-<span class='kw'>return</span> <span class='id identifier rubyid_comments'><span class='object_link'><a href="DoThings.html#comments-instance_method" title="DoThings#comments (method)">comments</a></span></span>
-</code></pre>
-
-<p>end</p>
+<p>Returns * :author [String], creator of the post</p>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>userId,</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>user unique id</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>:author [String], creator of the post</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
 
 
 
@@ -605,22 +875,112 @@ comments.postId=?&#39;, [post_id])</p>
       <pre class="lines">
 
 
-76
-77
-78
-79
-80
-81
-82</pre>
+115
+116
+117
+118
+119
+120
+121</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'model/GetThings.rb', line 76</span>
+      <pre class="code"><span class="info file"># File 'model/GetThings.rb', line 115</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_username_by_user'>get_username_by_user</span><span class='lparen'>(</span><span class='id identifier rubyid_userid'>userid</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='const'>SQLite3</span><span class='op'>::</span><span class='const'>Database</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>db/Forum.db</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_results_as_hash'>results_as_hash</span> <span class='op'>=</span> <span class='kw'>true</span>
+    
+    <span class='id identifier rubyid_posts'>posts</span> <span class='op'>=</span> <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SELECT username FROM users WHERE id=?</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='id identifier rubyid_userid'>userid</span><span class='rbracket'>]</span><span class='rparen'>)</span> 
+    <span class='kw'>return</span> <span class='id identifier rubyid_posts'>posts</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_users_by_post_id-instance_method">
+  
+    #<strong>get_users_by_post_id</strong>(post_id)  &#x21d2; <tt>Array</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Aquires user based on their user_id</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>post_id,</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>id given to post when posted</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>:userid [Integer], user unique id</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+102
+103
+104
+105
+106
+107
+108</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'model/GetThings.rb', line 102</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_users_by_post_id'>get_users_by_post_id</span><span class='lparen'>(</span><span class='id identifier rubyid_post_id'>post_id</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_db'>db</span> <span class='op'>=</span> <span class='const'>SQLite3</span><span class='op'>::</span><span class='const'>Database</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>db/Forum.db</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
     <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_results_as_hash'>results_as_hash</span> <span class='op'>=</span> <span class='kw'>true</span>
     
-    <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SELECT userId FROM posts WHERE id=?</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='id identifier rubyid_post_id'>post_id</span><span class='rbracket'>]</span><span class='rparen'>)</span> 
+    <span class='id identifier rubyid_posts'>posts</span> <span class='op'>=</span> <span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SELECT userid FROM posts WHERE id=?</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='id identifier rubyid_post_id'>post_id</span><span class='rbracket'>]</span><span class='rparen'>)</span> 
     <span class='kw'>return</span> <span class='id identifier rubyid_posts'>posts</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -633,7 +993,7 @@ comments.postId=?&#39;, [post_id])</p>
 </div>
 
       <div id="footer">
-  Generated on Wed May 15 15:42:12 2019 by
+  Generated on Thu May 23 10:56:33 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.19 (ruby-2.4.2).
 </div>

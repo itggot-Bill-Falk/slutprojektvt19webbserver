@@ -343,7 +343,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Delets the post with specified id.</p>
+</div></span>
   
 </li>
 
@@ -457,7 +459,7 @@
   
   
   <h3 class="inherited">Methods included from <span class='object_link'><a href="GetThings.html" title="GetThings (module)">GetThings</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="GetThings.html#get_all_posts-instance_method" title="GetThings#get_all_posts (method)">#get_all_posts</a></span>, <span class='object_link'><a href="GetThings.html#get_all_tags-instance_method" title="GetThings#get_all_tags (method)">#get_all_tags</a></span>, <span class='object_link'><a href="GetThings.html#get_all_users-instance_method" title="GetThings#get_all_users (method)">#get_all_users</a></span>, <span class='object_link'><a href="GetThings.html#get_post_by_id-instance_method" title="GetThings#get_post_by_id (method)">#get_post_by_id</a></span>, <span class='object_link'><a href="GetThings.html#get_posts_by_tag-instance_method" title="GetThings#get_posts_by_tag (method)">#get_posts_by_tag</a></span>, <span class='object_link'><a href="GetThings.html#get_posts_by_user-instance_method" title="GetThings#get_posts_by_user (method)">#get_posts_by_user</a></span>, <span class='object_link'><a href="GetThings.html#get_user_by_id-instance_method" title="GetThings#get_user_by_id (method)">#get_user_by_id</a></span>, <span class='object_link'><a href="GetThings.html#get_users_by_post_id-instance_method" title="GetThings#get_users_by_post_id (method)">#get_users_by_post_id</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="GetThings.html#get_all_posts-instance_method" title="GetThings#get_all_posts (method)">#get_all_posts</a></span>, <span class='object_link'><a href="GetThings.html#get_all_tags-instance_method" title="GetThings#get_all_tags (method)">#get_all_tags</a></span>, <span class='object_link'><a href="GetThings.html#get_all_users-instance_method" title="GetThings#get_all_users (method)">#get_all_users</a></span>, <span class='object_link'><a href="GetThings.html#get_post_by_id-instance_method" title="GetThings#get_post_by_id (method)">#get_post_by_id</a></span>, <span class='object_link'><a href="GetThings.html#get_posts_by_tag-instance_method" title="GetThings#get_posts_by_tag (method)">#get_posts_by_tag</a></span>, <span class='object_link'><a href="GetThings.html#get_posts_by_user-instance_method" title="GetThings#get_posts_by_user (method)">#get_posts_by_user</a></span>, <span class='object_link'><a href="GetThings.html#get_user_by_id-instance_method" title="GetThings#get_user_by_id (method)">#get_user_by_id</a></span>, <span class='object_link'><a href="GetThings.html#get_username_by_user-instance_method" title="GetThings#get_username_by_user (method)">#get_username_by_user</a></span>, <span class='object_link'><a href="GetThings.html#get_users_by_post_id-instance_method" title="GetThings#get_users_by_post_id (method)">#get_users_by_post_id</a></span></p>
 
   
   
@@ -468,7 +470,7 @@
   
   
   <h3 class="inherited">Methods included from <span class='object_link'><a href="DoThings.html" title="DoThings (module)">DoThings</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="DoThings.html#comments-instance_method" title="DoThings#comments (method)">#comments</a></span>, <span class='object_link'><a href="DoThings.html#delete_post_by_id-instance_method" title="DoThings#delete_post_by_id (method)">#delete_post_by_id</a></span>, <span class='object_link'><a href="DoThings.html#login-instance_method" title="DoThings#login (method)">#login</a></span>, <span class='object_link'><a href="DoThings.html#make_post-instance_method" title="DoThings#make_post (method)">#make_post</a></span>, <span class='object_link'><a href="DoThings.html#register-instance_method" title="DoThings#register (method)">#register</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="DoThings.html#delete_post_by_id-instance_method" title="DoThings#delete_post_by_id (method)">#delete_post_by_id</a></span>, <span class='object_link'><a href="DoThings.html#login-instance_method" title="DoThings#login (method)">#login</a></span>, <span class='object_link'><a href="DoThings.html#make_post-instance_method" title="DoThings#make_post (method)">#make_post</a></span>, <span class='object_link'><a href="DoThings.html#register-instance_method" title="DoThings#register (method)">#register</a></span></p>
 
 
   <div id="instance_method_details" class="method_details_list">
@@ -498,7 +500,7 @@
   <p class="tag_title">See Also:</p>
   <ul class="see">
     
-      <li><span class='object_link'><a href="GetThings.html#get_all_posts-instance_method" title="GetThings#get_all_posts (method)">GetThings#get_all_posts</a></span></li>
+      <li>Model#get_all_posts</li>
     
   </ul>
 
@@ -510,14 +512,14 @@
       <pre class="lines">
 
 
-18
-19
-20
-21
-22</pre>
+28
+29
+30
+31
+32</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 18</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 28</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_posts'>posts</span> <span class='op'>=</span> <span class='id identifier rubyid_get_all_posts'><span class='object_link'><a href="GetThings.html#get_all_posts-instance_method" title="GetThings#get_all_posts (method)">get_all_posts</a></span></span><span class='lparen'>(</span><span class='rparen'>)</span>
@@ -555,7 +557,7 @@
         <span class='name'>tags,</span>
       
       
-        <span class='type'>(<tt>string</tt>)</span>
+        <span class='type'>(<tt>String</tt>)</span>
       
       
       
@@ -572,7 +574,7 @@
   <p class="tag_title">See Also:</p>
   <ul class="see">
     
-      <li>DoThings#GetPostsByTag</li>
+      <li>Model#get_posts_by_tag</li>
     
   </ul>
 
@@ -584,14 +586,14 @@
       <pre class="lines">
 
 
-85
-86
-87
-88
-89</pre>
+95
+96
+97
+98
+99</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 85</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 95</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/forum/:tag</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_posts'>posts</span> <span class='op'>=</span> <span class='id identifier rubyid_get_posts_by_tag'><span class='object_link'><a href="GetThings.html#get_posts_by_tag-instance_method" title="GetThings#get_posts_by_tag (method)">get_posts_by_tag</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>tag</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
@@ -631,12 +633,12 @@
       <pre class="lines">
 
 
-27
-28
-29</pre>
+37
+38
+39</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 27</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 37</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/login</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:login</span><span class='rparen'>)</span>
@@ -672,7 +674,7 @@
         <span class='name'>id,</span>
       
       
-        <span class='type'>(<tt>integer</tt>)</span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
@@ -689,7 +691,9 @@
   <p class="tag_title">See Also:</p>
   <ul class="see">
     
-      <li>GetThings#GetPostById</li>
+      <li>Model#get_post_by_id</li>
+    
+      <li>Model#get_comments_by_post</li>
     
   </ul>
 
@@ -701,21 +705,21 @@
       <pre class="lines">
 
 
-96
-97
-98
-99
-100
-101</pre>
+107
+108
+109
+110
+111
+112</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 96</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 107</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/post/:id</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_post'>post</span> <span class='op'>=</span> <span class='id identifier rubyid_get_post_by_id'><span class='object_link'><a href="GetThings.html#get_post_by_id-instance_method" title="GetThings#get_post_by_id (method)">get_post_by_id</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_comments'><span class='object_link'><a href="DoThings.html#comments-instance_method" title="DoThings#comments (method)">comments</a></span></span> <span class='op'>=</span> <span class='id identifier rubyid_get_comments_by_post'>get_comments_by_post</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_comments'>comments</span> <span class='op'>=</span> <span class='id identifier rubyid_get_comments_by_post'>get_comments_by_post</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
 
-    <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:post</span><span class='comma'>,</span> <span class='label'>locals:</span><span class='lbrace'>{</span><span class='label'>post:</span> <span class='id identifier rubyid_post'>post</span><span class='comma'>,</span> <span class='label'>comments:</span> <span class='id identifier rubyid_comments'><span class='object_link'><a href="DoThings.html#comments-instance_method" title="DoThings#comments (method)">comments</a></span></span><span class='rbrace'>}</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:post</span><span class='comma'>,</span> <span class='label'>locals:</span><span class='lbrace'>{</span><span class='label'>post:</span> <span class='id identifier rubyid_post'>post</span><span class='comma'>,</span> <span class='label'>comments:</span> <span class='id identifier rubyid_comments'>comments</span><span class='rbrace'>}</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -750,12 +754,12 @@
       <pre class="lines">
 
 
-49
-50
-51</pre>
+59
+60
+61</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 49</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 59</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/register</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:register</span><span class='rparen'>)</span>
@@ -785,6 +789,13 @@
 <div class="tags">
   
 
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li>Model#get_all_tags</li>
+    
+  </ul>
+
 
 
 </div><table class="source_code">
@@ -793,14 +804,14 @@
       <pre class="lines">
 
 
-124
-125
-126
-127
-128</pre>
+137
+138
+139
+140
+141</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 124</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 137</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/tags</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_get_all_tags'><span class='object_link'><a href="GetThings.html#get_all_tags-instance_method" title="GetThings#get_all_tags (method)">get_all_tags</a></span></span><span class='lparen'>(</span><span class='rparen'>)</span>
@@ -838,7 +849,7 @@
         <span class='name'>id,</span>
       
       
-        <span class='type'>(<tt>integer</tt>)</span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
@@ -855,7 +866,7 @@
   <p class="tag_title">See Also:</p>
   <ul class="see">
     
-      <li>GetThings#GetPostByTag</li>
+      <li>Model#get_posts_by_tag</li>
     
   </ul>
 
@@ -867,14 +878,14 @@
       <pre class="lines">
 
 
-135
-136
-137
-138
-139</pre>
+148
+149
+150
+151
+152</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 135</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 148</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/tags/:id</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_get_posts_by_tag'><span class='object_link'><a href="GetThings.html#get_posts_by_tag-instance_method" title="GetThings#get_posts_by_tag (method)">get_posts_by_tag</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
@@ -912,7 +923,7 @@
         <span class='name'>id,</span>
       
       
-        <span class='type'>(<tt>integer</tt>)</span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
@@ -929,7 +940,7 @@
   <p class="tag_title">See Also:</p>
   <ul class="see">
     
-      <li>GetThings#GetPostByUser</li>
+      <li>Model#get_posts_by_user</li>
     
   </ul>
 
@@ -941,14 +952,14 @@
       <pre class="lines">
 
 
-74
-75
-76
-77
-78</pre>
+84
+85
+86
+87
+88</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 74</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 84</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/user/:id</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_posts'>posts</span> <span class='op'>=</span> <span class='id identifier rubyid_get_posts_by_user'><span class='object_link'><a href="GetThings.html#get_posts_by_user-instance_method" title="GetThings#get_posts_by_user (method)">get_posts_by_user</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
@@ -986,7 +997,7 @@
         <span class='name'>content,</span>
       
       
-        <span class='type'>(<tt>string</tt>)</span>
+        <span class='type'>(<tt>String</tt>)</span>
       
       
       
@@ -1002,7 +1013,7 @@
         <span class='name'>image,</span>
       
       
-        <span class='type'>(<tt>string</tt>)</span>
+        <span class='type'>(<tt>String</tt>)</span>
       
       
       
@@ -1019,7 +1030,7 @@
   <p class="tag_title">See Also:</p>
   <ul class="see">
     
-      <li>DoThings#Comment</li>
+      <li>Model#comment</li>
     
   </ul>
 
@@ -1031,18 +1042,20 @@
       <pre class="lines">
 
 
-109
-110
-111
-112
-113</pre>
+120
+121
+122
+123
+124
+125</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 109</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 120</span>
 
 <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/comment/:post_id</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_comment'>comment</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>user_id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
-
+    <span class='kw'>if</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>user_id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+        <span class='id identifier rubyid_comment'>comment</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>user_id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
     <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='id identifier rubyid_back'>back</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1059,22 +1072,68 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Delets the post with specified id</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>id,</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>User unique id</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li>Model#get_users_by_post_id</li>
+    
+      <li>Model#delete_post_by_id</li>
+    
+  </ul>
+
+
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-155
-156
-157
-158</pre>
+174
+175
+176
+177
+178
+179</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 155</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 174</span>
 
 <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/delete/:id</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_delete_post_by_id'><span class='object_link'><a href="DoThings.html#delete_post_by_id-instance_method" title="DoThings#delete_post_by_id (method)">delete_post_by_id</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>user_id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='id identifier rubyid_get_users_by_post_id'><span class='object_link'><a href="GetThings.html#get_users_by_post_id-instance_method" title="GetThings#get_users_by_post_id (method)">get_users_by_post_id</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>userId</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+        <span class='id identifier rubyid_delete_post_by_id'><span class='object_link'><a href="DoThings.html#delete_post_by_id-instance_method" title="DoThings#delete_post_by_id (method)">delete_post_by_id</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
     <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='id identifier rubyid_back'>back</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1108,7 +1167,7 @@
         <span class='name'>Username,</span>
       
       
-        <span class='type'>(<tt>string</tt>)</span>
+        <span class='type'>(<tt>String</tt>)</span>
       
       
       
@@ -1124,7 +1183,7 @@
         <span class='name'>Password,</span>
       
       
-        <span class='type'>(<tt>string</tt>)</span>
+        <span class='type'>(<tt>String</tt>)</span>
       
       
       
@@ -1141,7 +1200,7 @@
   <p class="tag_title">See Also:</p>
   <ul class="see">
     
-      <li><span class='object_link'><a href="DoThings.html#login-instance_method" title="DoThings#login (method)">DoThings#login</a></span></li>
+      <li>Model#login</li>
     
   </ul>
 
@@ -1153,18 +1212,18 @@
       <pre class="lines">
 
 
-37
-38
-39
-40
-41
-42
-43
-44
-45</pre>
+47
+48
+49
+50
+51
+52
+53
+54
+55</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 37</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 47</span>
 
 <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/login</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_user'>user</span> <span class='op'>=</span> <span class='id identifier rubyid_login'><span class='object_link'><a href="DoThings.html#login-instance_method" title="DoThings#login (method)">login</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
@@ -1208,13 +1267,13 @@
       <pre class="lines">
 
 
-117
-118
-119
-120</pre>
+129
+130
+131
+132</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 117</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 129</span>
 
 <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/logout</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_session'>session</span><span class='period'>.</span><span class='id identifier rubyid_destroy'>destroy</span>
@@ -1251,7 +1310,7 @@
         <span class='name'>content,</span>
       
       
-        <span class='type'>(<tt>string</tt>)</span>
+        <span class='type'>(<tt>String</tt>)</span>
       
       
       
@@ -1267,7 +1326,7 @@
         <span class='name'>image,</span>
       
       
-        <span class='type'>(<tt>string</tt>)</span>
+        <span class='type'>(<tt>String</tt>)</span>
       
       
       
@@ -1283,7 +1342,7 @@
         <span class='name'>tags,</span>
       
       
-        <span class='type'>(<tt>string</tt>)</span>
+        <span class='type'>(<tt>String</tt>)</span>
       
       
       
@@ -1300,7 +1359,7 @@
   <p class="tag_title">See Also:</p>
   <ul class="see">
     
-      <li>DoThings#MakePost</li>
+      <li>Model#make_post</li>
     
   </ul>
 
@@ -1312,16 +1371,20 @@
       <pre class="lines">
 
 
-148
-149
-150
-151</pre>
+161
+162
+163
+164
+165
+166</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 148</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 161</span>
 
 <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/post</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-     <span class='id identifier rubyid_make_post'><span class='object_link'><a href="DoThings.html#make_post-instance_method" title="DoThings#make_post (method)">make_post</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_session'>session</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>user_id</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+        <span class='id identifier rubyid_make_post'><span class='object_link'><a href="DoThings.html#make_post-instance_method" title="DoThings#make_post (method)">make_post</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='id identifier rubyid_session'>session</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
     <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='id identifier rubyid_back'>back</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1355,7 +1418,7 @@
         <span class='name'>Username,</span>
       
       
-        <span class='type'>(<tt>string</tt>)</span>
+        <span class='type'>(<tt>String</tt>)</span>
       
       
       
@@ -1371,7 +1434,7 @@
         <span class='name'>Password,</span>
       
       
-        <span class='type'>(<tt>string</tt>)</span>
+        <span class='type'>(<tt>String</tt>)</span>
       
       
       
@@ -1388,7 +1451,7 @@
   <p class="tag_title">See Also:</p>
   <ul class="see">
     
-      <li><span class='object_link'><a href="DoThings.html#register-instance_method" title="DoThings#register (method)">DoThings#register</a></span></li>
+      <li>Model#register</li>
     
   </ul>
 
@@ -1400,18 +1463,18 @@
       <pre class="lines">
 
 
-59
-60
-61
-62
-63
-64
-65
-66
-67</pre>
+69
+70
+71
+72
+73
+74
+75
+76
+77</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 59</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 69</span>
 
 <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/register</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_user'>user</span> <span class='op'>=</span> <span class='id identifier rubyid_register'><span class='object_link'><a href="DoThings.html#register-instance_method" title="DoThings#register (method)">register</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
@@ -1432,7 +1495,7 @@
 </div>
 
       <div id="footer">
-  Generated on Wed May 15 15:42:11 2019 by
+  Generated on Thu May 23 10:56:33 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.19 (ruby-2.4.2).
 </div>
