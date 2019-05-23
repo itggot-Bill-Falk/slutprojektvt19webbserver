@@ -25,5 +25,5 @@ Kommentera inlägg
 ## 4. Arkitektur (Beskriv filer och mappar)
 Arkitekturen kommer bestå av 3 ruby filer. En vanlig app.rb som kommer ta funktioner från ruby-fileran do_things och get_things. Dessa filer kommer ligga i en funktions-mapp Utöver detta kommer det som vanligt finnas en viewsmapp med alla slim filer i. Kommer också som kommer innehålla css och bilder.
 ## 5. (Databas med ER-diagram)
-https://www.lucidchart.com/invitations/accept/ed6a4284-2c57-46b1-8379-6405e04b7d92 
+https://www.lucidchart.com/invitations/accept/ed6a4284-2c57-46b1-8379-6405e04b7d92
 
